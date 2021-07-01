@@ -26,11 +26,13 @@ let buttons = document.getElementsByClassName("button");
 for(let i=0;i<buttons.length;i++){
   buttons[i].addEventListener("click", ()=>{
     const index = i;
-    buttons[index].innerHTML = turn.innerHTML;
-    table[index] = turn.innerHTML;
-    turn.innerHTML = turns[turn.innerHTML];
-    winCheck();
-    drawCheck();
+    if(table[index]==""){
+      buttons[index].innerHTML = turn.innerHTML;
+      table[index] = turn.innerHTML;
+      turn.innerHTML = turns[turn.innerHTML];
+      winCheck();
+      drawCheck();
+    }
   });
 }
 
