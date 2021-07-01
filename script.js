@@ -23,10 +23,10 @@ const turn = document.getElementById("turn");
 turn.innerHTML = "X";
 let buttons = document.getElementsByClassName("button");
 //adding event listener for buttons
-for(let i=0;i<buttons.length;i++){
+for(let i = 0; i < buttons.length; i++){
   buttons[i].addEventListener("click", ()=>{
     const index = i;
-    if(table[index]==""){
+    if(table[index] == ""){
       buttons[index].innerHTML = turn.innerHTML;
       table[index] = turn.innerHTML;
       turn.innerHTML = turns[turn.innerHTML];
@@ -38,7 +38,7 @@ for(let i=0;i<buttons.length;i++){
 
 //reset the game board
 function reset() {
-  for(let i=0;i<buttons.length;i++){
+  for(let i = 0; i < buttons.length; i++){
     buttons[i].innerHTML = "";
     table[i] = "";
   }
@@ -47,14 +47,14 @@ function reset() {
 
 //check for win
 function winCheck() {
-  for(let i=0;i<winSet.length;i++){
-    if(table[winSet[i][0]]=="X" && table[winSet[i][1]]=="X" && table[winSet[i][2]]=="X") {
+  for(let i = 0; i < winSet.length; i++){
+    if(table[winSet[i][0]] == "X" && table[winSet[i][1]] == "X" && table[winSet[i][2]] == "X") {
       alert("X wins!");
       scores["X"] = scores["X"]+1;
       x.innerHTML = scores["X"];
       reset();
     }
-    if(table[winSet[i][0]]=="O" && table[winSet[i][1]]=="O" && table[winSet[i][2]]=="O") {
+    if(table[winSet[i][0]] == "O" && table[winSet[i][1]] == "O" && table[winSet[i][2]] == "O") {
       alert("O wins!");
       scores["O"] = scores["O"]+1;
       o.innerHTML = scores["O"];
